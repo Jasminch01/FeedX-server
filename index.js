@@ -49,6 +49,16 @@ async function run() {
       const result = await foodCollection.findOne(query);
       res.send(result);
     });
+
+    app.get('/requested-foods', async(req, res) => {
+      const result = await requestFoods.find().toArray();
+      res.send(result)
+    })
+    app.post('/foods', async(req, res) => {
+      const foods = req.body;
+      const result = await foodCollection.insertOne(foods);
+      res.send(result)
+    })
     
     app.post('/requested-foods', async(req, res) => {
       const food = req.body;
@@ -58,7 +68,7 @@ async function run() {
 
         } else if (insertErr) {
           console.error('Error while inserting the user:', insertErr);
-          
+
         } else {
           // User inserted successfully
           console.log('User registered successfully.');
@@ -67,6 +77,14 @@ async function run() {
       });
       res.send(result)
       
+    })
+    app.delete('/requested-foods/:id', async(req, res) => {
+      const id = req.params.id;
+      const query = {
+        _id : new ObjectId(id)
+      }
+      const result = await requestFoods.deleteOne(query);
+      res.send(result)
     })
     
 
