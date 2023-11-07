@@ -62,19 +62,7 @@ async function run() {
     
     app.post('/requested-foods', async(req, res) => {
       const food = req.body;
-      const result = await requestFoods.insertOne(food, (insertErr) => {
-        if (insertErr && insertErr.code === 11000) {
-          console.log('Username already exists. Please choose a different username.');
-
-        } else if (insertErr) {
-          console.error('Error while inserting the user:', insertErr);
-
-        } else {
-          // User inserted successfully
-          console.log('User registered successfully.');
-          // You can return a success response to the user
-        }
-      });
+      const result = await requestFoods.insertOne(food);
       res.send(result)
       
     })
