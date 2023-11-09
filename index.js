@@ -12,11 +12,10 @@ const port = process.env.PORT || 5000;
 //middlewares
 app.use(cookieParser());
 app.use(express.json());
-app.use(
-  cors({
-    origin: ["http://localhost:5173"],
-    credentials: true,
-  }));
+app.use(cors({
+  origin : ['https://feedx-5dab1.web.app', 'https://feedx-5dab1.firebaseapp.com'],
+  credentials : true
+}));
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.nkafzub.mongodb.net/?retryWrites=true&w=majority`;
 
@@ -29,34 +28,49 @@ const client = new MongoClient(uri, {
   },
 });
 
+//middlewares
+
+const verifyToken = (req, res, next) => {
+  const token = req.cookies.token;
+  if (!token) {
+    return res.status(401).send({ message: "unauthorized access" });
+  }
+  jwt.verify(token, process.env.ACCESS_TOKEN, (error, decoded) => {
+    if (error) {
+      return res.status(401).send({ message: "unauthorized access" });
+    }
+    req.user = decoded;
+    next();
+  });
+};
+
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+    // await client.connect();
 
     const foodCollection = client.db("FeedX").collection("foodCollection");
     const requestFoods = client.db("FeedX").collection("requestFoods");
 
     //
-    app.post('/jwt', async(req, res) => {
+    app.post("/jwt", async (req, res) => {
       const user = req.body;
-      const token = jwt.sign(user, process.env.ACCESS_TOKEN, {expiresIn : '1h'})
-
-      res.cookie('token', token , {
+      const token = jwt.sign(user, process.env.ACCESS_TOKEN, {
+        expiresIn: "1h",
+      });
+      res.cookie("token", token, {
         httpOnly : true,
-        secure : true,
-        sameSite : 'none'
+        secure: true,
+        sameSite: 'none'
       })
-      .send({success: true})
-    })
+      .send({ success : true });
+    });
 
     //clear cookies
-    app.post('/logout', async(req, res) => {
+    app.post("/logout", async (req, res) => {
       const user = req.body;
-      console.log('logout user', user)
-      res.clearCookie('token', {maxAge: 0})
-      .send({success : true})
-    })
+      res.clearCookie("token", { maxAge: 0 }).send({ success: true });
+    });
 
     //get all foods data
     app.get("/foods", async (req, res) => {
@@ -97,8 +111,12 @@ async function run() {
     });
 
     //get all requested foods
-    app.get("/requested-foods", async (req, res) => {
-      const result = await requestFoods.find().toArray();
+    app.get("/requested-foods", verifyToken, async (req, res) => {
+      let query = {};
+      if (req.query?.email) {
+        query = { requstorEmail: req.query.email };
+      }
+      const result = await requestFoods.find(query).toArray();
       res.send(result);
     });
 
