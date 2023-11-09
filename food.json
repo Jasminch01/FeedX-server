@@ -1,0 +1,153 @@
+[
+  {
+    "foodImage": "https://i.ibb.co/93C3sxt/food1.jpg",
+    "foodName": "Delicious Lasagna",
+    "donator": {
+      "image": "https://i.ibb.co/6014kSn/boy2.jpg",
+      "name": "John Doe"
+    },
+    "foodQuantity": 6,
+    "pickupLocation": "123 Main Street, Anytown, USA",
+    "expiredDateTime": "2023-10-25",
+    "additionalNotes": "Homemade with love, vegetarian"
+  },
+  {
+    "foodImage": "https://i.ibb.co/ypTDcws/food2.jpg",
+    "foodName": "Fresh Vegetable Stir-Fry",
+    "donator": {
+      "image": "https://i.ibb.co/417GQCh/boy1.png",
+      "name": "Jane Smith"
+    },
+    "foodQuantity": 4,
+    "pickupLocation": "456 Oak Avenue, Cityville, USA",
+    "expiredDateTime": "2023-10-27",
+    "additionalNotes": "Gluten-free and vegan"
+  },
+  {
+    "foodImage": "https://i.ibb.co/v1qPHmw/food3.jpg",
+    "foodName": "Spaghetti Bolognese",
+    "donator": {
+      "image": "https://i.ibb.co/0Mj1qYB/girl2.jpg",
+      "name": "Sarah Wilson"
+    },
+    "foodQuantity": 5,
+    "pickupLocation": "789 Elm Street, Villageton, USA",
+    "expiredDateTime": "2023-10-29",
+    "additionalNotes": "Contains dairy and meat"
+  },
+  {
+    "foodImage": "https://i.ibb.co/QQQKScw/food4.jpg",
+    "foodName": "Homemade Chicken Soup",
+    "donator": {
+      "image": "https://i.ibb.co/417GQCh/boy1.png",
+      "name": "Michael Brown"
+    },
+    "foodQuantity": 8,
+    "pickupLocation": "101 Pine Road, Hamletville, USA",
+    "expiredDateTime": "2023-10-30",
+    "additionalNotes": "Nutritious and hearty"
+  },
+  {
+    "foodImage": "https://i.ibb.co/4JGWxms/Food5.jpg",
+    "foodName": "Fruit Salad",
+    "donator": {
+      "image": "https://i.ibb.co/s59H4Mx/girl1.jpg",
+      "name": "Emily Green"
+    },
+    "foodQuantity": 1,
+    "pickupLocation": "222 Cherry Lane, Orchard City, USA",
+    "expiredDateTime": "2023-10-28",
+    "additionalNotes": "Fresh and healthy"
+  },
+  {
+    "foodImage": "https://i.ibb.co/5s7x0vF/food6.jpg",
+    "foodName": "Cheese and Charcuterie Platter",
+    "donator": {
+      "image": "https://i.ibb.co/6014kSn/boy2.jpg",
+      "name": "David White"
+    },
+    "foodQuantity": 2,
+    "pickupLocation": "333 Vine Street, Winerytown, USA",
+    "expiredDateTime": "2023-10-26",
+    "additionalNotes": "Perfect for a special occasion"
+  },
+
+  {
+    "foodImage": "https://i.ibb.co/8NZydWn/add4.jpg",
+    "foodName": "Savory Spaghetti",
+    "donator": {
+      "image": "https://i.ibb.co/6014kSn/boy2.jpg",
+      "name": "Emma Smith"
+    },
+    "foodQuantity": 2,
+    "pickupLocation": "123 Main Street, Cityville",
+    "expiredDateTime": "2023-09-15",
+    "additionalNotes": "Homemade with love, vegetarian",
+    "viewDetailButton": "Details"
+  },
+  {
+    "foodImage": "https://i.ibb.co/4JGWxms/Food5.jpg",
+    "foodName": "Fresh Fruit Salad",
+    "donator": {
+      "image": "https://i.ibb.co/417GQCh/boy1.png",
+      "name": "Michael Johnson"
+    },
+    "foodQuantity": 3,
+    "pickupLocation": "456 Oak Avenue, Townsville",
+    "expiredDateTime": "2023-09-18",
+    "additionalNotes": "Nutritious and refreshing",
+    "viewDetailButton": "Details"
+  },
+  {
+    "foodImage": "https://i.ibb.co/2PdTRKs/add-3.jpg",
+    "foodName": "Chicken and Rice",
+    "donator": {
+      "image": "https://i.ibb.co/417GQCh/boy1.png",
+      "name": "Sarah Davis"
+    },
+    "foodQuantity": 5,
+    "pickupLocation": "789 Elm Street, Villagetown",
+    "expiredDateTime": "2023-09-14",
+    "additionalNotes": "Delicious and hearty",
+    "viewDetailButton": "Details"
+  },
+  {
+    "foodImage": "https://i.ibb.co/ypTDcws/food2.jpg",
+    "foodName": "Vegetable Stir-Fry",
+    "donator": {
+      "image": "https://i.ibb.co/6014kSn/boy2.jpg",
+      "name": "John Lee"
+    },
+    "foodQuantity": 3,
+    "pickupLocation": "101 Pine Road, Hamletville",
+    "expiredDateTime": "2023-09-16",
+    "additionalNotes": "Healthy and flavorful",
+    "viewDetailButton": "Details"
+  },
+  {
+    "foodImage": "https://i.ibb.co/Z2jKkZB/add2.jpg",
+    "foodName": "Delicious Lasagna",
+    "donator": {
+      "image": "https://i.ibb.co/s59H4Mx/girl1.jpg",
+      "name": "David Smith"
+    },
+    "foodQuantity": 6,
+    "pickupLocation": "555 Cedar Lane, Groveton",
+    "expiredDateTime": "2023-09-13",
+    "additionalNotes": "Homemade with care, meaty",
+    "viewDetailButton": "Details"
+  },
+  {
+    "foodImage": "https://i.ibb.co/6WyCZHH/add1.jpg",
+    "foodName": "Fruit Cake",
+    "donator": {
+      "image": "https://i.ibb.co/6014kSn/boy2.jpg",
+      "name": "Jane Smith"
+    },
+    "foodQuantity": 2,
+    "pickupLocation": "222 Oak Street, Parkville",
+    "expiredDateTime": "2023-09-17",
+    "additionalNotes": "Perfect for celebrations",
+    "viewDetailButton": "Details"
+  }
+]
