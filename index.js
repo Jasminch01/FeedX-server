@@ -13,7 +13,7 @@ const port = process.env.PORT || 5000;
 app.use(cookieParser());
 app.use(express.json());
 app.use(cors({
-  origin : ['https://feedx-a89ea.web.app', 'https://feedx-a89ea.firebaseapp.com'],
+  origin : ['https://feedx-a89ea.web.app', 'https://feedx-a89ea.firebaseapp.com', 'https://garrulous-honey.surge.sh', 'https://cozy-platypus-555f05.netlify.app'],
   credentials : true
 }));
 
